@@ -1,0 +1,263 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-jetbrains);
+  --font-heading: var(--font-sora);
+
+  /* Formlect additions on top of the shadcn tokens */
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-soft: var(--success-soft);
+  --color-destructive-soft: var(--destructive-soft);
+  --color-destructive-border: var(--destructive-border);
+  --color-primary-hover: var(--primary-hover);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-accent-hover: var(--accent-hover);
+  --color-neutral-soft: var(--neutral-soft);
+  --color-tint: var(--tint);
+  --color-tint-soft: var(--tint-soft);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-control: var(--control);
+  --color-border-strong: var(--border-strong);
+  --color-skeleton: var(--skeleton);
+  --color-skeleton-hl: var(--skeleton-hl);
+  --color-row-line: var(--row-line);
+
+  /* Legacy aliases used by the sign-in screen; prefer the shadcn names in new code */
+  --color-brand: var(--primary);
+  --color-brand-dark: var(--accent-foreground);
+  --color-brand-soft: #f2eefc;
+  --color-brand-ring: #e6e0f8;
+  --color-coral: var(--highlight);
+  --color-ink: var(--foreground);
+  --color-ink-2: #57525e;
+  --color-ink-3: #8a8590;
+  --color-line: var(--input);
+  --color-canvas: var(--background);
+  --color-warn: #c2410c;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* sm 6 / md 8 / lg 10 / xl 14 (Formlect Components, "Type, radius, rules") */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --shadow-pop: 0 12px 32px -8px rgb(27 23 36 / 0.18);
+  --shadow-modal: 0 24px 64px -16px rgb(27 23 36 / 0.4);
+
+  @keyframes fl-up {
+    from { opacity: 0; transform: translateY(6px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fl-shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+  }
+  /* Form builder (Form Builder.dc.html): flin / flup / flfade / flpop / flshake / flpulse */
+  @keyframes fl-in {
+    from { opacity: 0; transform: translateY(8px) scale(0.985); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fl-rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fl-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fl-pop {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes fl-shake {
+    0%, 100% { transform: none; }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
+  @keyframes fl-pulse {
+    0% { box-shadow: 0 0 0 0 rgb(47 158 98 / 0.45); }
+    70% { box-shadow: 0 0 0 6px rgb(47 158 98 / 0); }
+    100% { box-shadow: 0 0 0 0 rgb(47 158 98 / 0); }
+  }
+  --animate-fl-in: fl-in 0.34s cubic-bezier(0.2, 1, 0.4, 1);
+  --animate-fl-rise: fl-rise 0.2s ease-out;
+  --animate-fl-fade: fl-fade 0.15s;
+  --animate-fl-pop: fl-pop 0.4s cubic-bezier(0.2, 1.5, 0.4, 1);
+  --animate-fl-shake: fl-shake 0.4s ease-in-out;
+  --animate-fl-pulse: fl-pulse 2s infinite;
+  --animate-fl-up: fl-up 0.14s ease-out;
+  --animate-fl-shimmer: fl-shimmer 1.4s linear infinite;
+}
+
+/* Source of truth: Formlect Components.dc.html #tokens. Flat fills, no gradients or glows. */
+:root {
+  --radius: 0.625rem;
+  --background: #faf8f6;
+  --foreground: #1b1724;
+  --card: #ffffff;
+  --card-foreground: #1b1724;
+  --popover: #ffffff;
+  --popover-foreground: #1b1724;
+  --primary: #4b2bd1;
+  --primary-foreground: #ffffff;
+  --primary-hover: #4024bd;
+  --secondary: #f1eeea;
+  --secondary-hover: #e9e4df;
+  --neutral-soft: #ece8e4;
+  --tint: #f4f1fc; /* hover / selected option */
+  --tint-soft: #f8f6fd; /* selected row, OTP slot */
+  --primary-300: #b5a6ee; /* hover border, rating preview fill */
+  --primary-400: #9581e6; /* dropzone hover, rating preview stroke */
+  --control: #cfc8c2; /* unchecked checkbox / radio border */
+  --border-strong: #d6d0ca; /* dashed outlines, key chips */
+  --skeleton: #efebe7;
+  --skeleton-hl: #f7f5f3;
+  --row-line: #f2efeb;
+  --secondary-foreground: #1b1724;
+  --muted: #f1eeea;
+  --muted-foreground: #77727d;
+  --accent: #ece7fb;
+  --accent-hover: #e2dafa;
+  --accent-foreground: #4024bd;
+  --destructive: #c8401a;
+  --destructive-hover: #b23815;
+  --destructive-soft: #fff7f2;
+  --destructive-border: #f5c9b3;
+  --border: #e6e1dc;
+  --input: #ddd8d3;
+  --ring: #4b2bd1;
+  --highlight: #ffb38f;
+  --highlight-foreground: #5a2410;
+  --highlight-soft: #ffe3d5;
+  --success: #2f9e62;
+  --success-foreground: #155c3a;
+  --success-soft: #e2f3e8;
+  --chart-1: #4b2bd1;
+  --chart-2: #ffb38f;
+  --chart-3: #9581e6;
+  --chart-4: #2f9e62;
+  --chart-5: #a39da6;
+  --sidebar: #efebe7; /* Dashboard v1 sidebar: darker linen than the page */
+  --sidebar-foreground: #3d3843;
+  --sidebar-primary: #4b2bd1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffffff;
+  --sidebar-accent-foreground: #1b1724;
+  --sidebar-border: #e3ddd8;
+  --sidebar-ring: #4b2bd1;
+}
+
+.dark {
+  --background: #16131c;
+  --foreground: #efecf0;
+  --card: #1f1b25;
+  --card-foreground: #efecf0;
+  --popover: #1f1b25;
+  --popover-foreground: #efecf0;
+  --primary: #7b62f0;
+  --primary-foreground: #ffffff;
+  --primary-hover: #6a50e0; /* derived: no dark value in the design file */
+  --secondary: #2a2531;
+  --secondary-hover: #342e3c; /* derived: no dark value in the design file */
+  --neutral-soft: #2a2531;
+  /* Design file defines no dark values for the tokens below; derived from card #1f1b25 + primary tints */
+  --tint: #272238;
+  --tint-soft: #231e2e;
+  --primary-300: #5a47c0;
+  --primary-400: #6b55d6;
+  --control: #4a4352;
+  --border-strong: #4a4352;
+  --skeleton: #2a2531;
+  --skeleton-hl: #342e3c;
+  --row-line: #272230;
+  --secondary-foreground: #efecf0;
+  --muted: #2a2531;
+  --muted-foreground: #a69fa9;
+  --accent: #2d2647;
+  --accent-hover: #382f5a; /* derived: no dark value in the design file */
+  --accent-foreground: #d9d0f6;
+  --destructive: #ea7a4f;
+  --destructive-hover: #d96a3f; /* derived: no dark value in the design file */
+  --destructive-soft: #2a1a14; /* not in the design file: derived */
+  --destructive-border: #5a2e1f; /* not in the design file: derived */
+  --border: #2d2833;
+  --input: #38323f;
+  --ring: #7b62f0;
+  --highlight: #ffb38f;
+  --highlight-foreground: #2a1206;
+  --highlight-soft: #3a2218; /* derived: no dark value in the design file */
+  --success: #4cc283;
+  --success-foreground: #8fe0b5; /* derived: no dark value in the design file */
+  --success-soft: #16301f; /* derived: no dark value in the design file */
+  --chart-1: #7b62f0;
+  --chart-2: #ffb38f;
+  --chart-3: #9581e6;
+  --chart-4: #4cc283;
+  --chart-5: #a69fa9;
+  --sidebar: #131118;
+  --sidebar-foreground: #a69fa9;
+  --sidebar-primary: #7b62f0;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1f1b25;
+  --sidebar-accent-foreground: #efecf0;
+  --sidebar-border: #2a2531;
+  --sidebar-ring: #7b62f0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

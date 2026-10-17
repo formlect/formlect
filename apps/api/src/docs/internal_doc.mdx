@@ -1,0 +1,67 @@
+# Formlect
+
+# Things which is broken
+
+- The bashbaord looked awful
+- The syncing process of form in the backend is not coded well
+- The user facing form design
+
+# 4 March 2026
+
+Logged in to the local development of Formlect.
+
+- The bashbaord looked awful
+- The syncing process of form in the backend is not coded well
+  we have to fix this before that, today we will be working on
+- The publishing process of the form ✅
+- The submission process of the form and capture the data in the backend ✅
+
+# 5 March 2026
+
+- Capture the data in the database ✅
+
+# 7 March 2026
+
+I am heavly focus on Backend part. lets quit the frontend for a while built the entire system first then we will make it beautiful. So right now we are completed with capturing the form data. what next.
+build the ai agent to create form based on the prompt?
+No not right now
+
+What we have achieved right now.
+
+Form Building -> Publishing it -> Getting response
+
+Now focusing on getting response on the other intergated tools for now and learn genAI completingly then we will figure out what to do next
+
+#### Implementation strategies
+
+Option A: The "Middleware" (Zapier / Make.com)
+If you want to save development time, don't build every integration yourself.
+
+How it works: You provide a "Webhook URL" field in your FormSchema. When a submission happens, your server sends a POST request to that URL.
+
+Pros: The user can connect to 5,000+ apps without you writing a single line of Notion-specific code.
+
+Option B: Native Integrations (Direct API)
+If you want a "Built-in" feel, you’ll need to store credentials in your FormSchema.
+
+One central palce for integration
+then canvas for connect individual form like zapier
+The "Zero-Config" Trap. You mentioned "users do not always configure it." To solve this without forcing them to use the canvas every time, you can offer Templates:
+
+When a user clicks "Connect to Google Sheets," you can automatically generate a basic "Direct" workflow for them that maps all fields to a new Sheet. This feels "automatic" to the user but uses your workflow engine under the hood.
+
+# 9 March 2026
+
+Lets build centeral integration system for notion, slack, google forms etc
+
+# 27 March 2026
+
+We have already integrated the google sheet. Now we have to build Zapier style Integration system. It will be canvas using react flow.
+
+Flow -
+Response user => Queue -> outbox pattern -> jaha par consume karna hai wo worker
+
+# 1 April 2026
+Two patterns
+1. Transactional outbox pattern - for critical data like form submission, we can use transactional outbox pattern to ensure data consistency and reliability. This way, even if there is a failure in the integration process, we won't lose any data.
+2. Sweeper pattern - for non-critical data, we can use sweeper pattern to periodically check for new data and process it. This way, we can avoid the overhead of maintaining a queue and worker for every integration.

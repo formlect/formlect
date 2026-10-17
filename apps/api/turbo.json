@@ -1,9 +1,29 @@
 {
-  "extends": ["//"],
-  "tasks": {
-    "build": {
-      "env": ["PORT"],
-      "outputs": ["dist/**"]
-    }
-  }
+	"extends": ["//"],
+	"tasks": {
+		"build": {
+			"env": [
+				"NODE_ENV",
+				"PORT",
+				"HOST",
+				"TRUST_PROXY",
+				"CORS_ORIGINS",
+				"COMMON_RATE_LIMIT_WINDOW_MS",
+				"COMMON_RATE_LIMIT_MAX_REQUESTS",
+				"DATABASE_URL",
+				"WEB_URL",
+				"RESEND_API_KEY",
+				"EMAIL_FROM",
+				"BETTER_AUTH_SECRET",
+				"BETTER_AUTH_URL",
+				"GOOGLE_ID",
+				"GOOGLE_SECRET",
+				"GOOGLE_REDIRECT_URI",
+				"GITHUB_ID",
+				"GITHUB_SECRET",
+				"GITHUB_REDIRECT_URI"
+			],
+			"outputs": ["dist/**"]
+		}
+	}
 }

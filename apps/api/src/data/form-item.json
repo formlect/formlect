@@ -1,0 +1,738 @@
+{
+	"input": {
+		"id": "",
+		"name": "",
+		"type": "input",
+		"label": "",
+		"placeholder": "",
+		"defaultValue": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"readonly": false,
+		"minLength": null,
+		"maxLength": null,
+		"pattern": null,
+		"autocomplete": "off",
+		"width": "full",
+		"className": "",
+		"icon": null,
+		"iconPosition": "left",
+		"inputType": "text",
+		"inputTypes": [
+			{ "value": "text", "label": "Text" },
+			{ "value": "email", "label": "Email" },
+			{ "value": "password", "label": "Password" },
+			{ "value": "number", "label": "Number" },
+			{ "value": "tel", "label": "Phone" },
+			{ "value": "url", "label": "URL" },
+			{ "value": "search", "label": "Search" }
+		],
+		"min": null,
+		"max": null,
+		"step": null,
+		"validation": {
+			"required": false,
+			"minLength": null,
+			"maxLength": null,
+			"min": null,
+			"max": null,
+			"pattern": null,
+			"messages": {
+				"required": "This field is required",
+				"minLength": "Minimum {min} characters required",
+				"maxLength": "Maximum {max} characters allowed",
+				"min": "Value must be at least {min}",
+				"max": "Value must not exceed {max}",
+				"pattern": "Invalid format",
+				"email": "Please enter a valid email address",
+				"url": "Please enter a valid URL",
+				"number": "Please enter a valid number"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "contains", "label": "Contains" },
+				{ "value": "not_contains", "label": "Not Contains" },
+				{ "value": "greater_than", "label": "Greater Than" },
+				{ "value": "less_than", "label": "Less Than" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"textarea": {
+		"id": "",
+		"name": "",
+		"type": "textarea",
+		"label": "",
+		"placeholder": "",
+		"defaultValue": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"readonly": false,
+		"rows": 4,
+		"rowsOptions": [
+			{ "value": 2, "label": "Small (2 rows)" },
+			{ "value": 4, "label": "Medium (4 rows)" },
+			{ "value": 6, "label": "Large (6 rows)" },
+			{ "value": 8, "label": "Extra Large (8 rows)" },
+			{ "value": 10, "label": "Huge (10 rows)" }
+		],
+		"minLength": null,
+		"maxLength": 5000,
+		"showCharCount": true,
+		"autoResize": false,
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"minLength": null,
+			"maxLength": 5000,
+			"pattern": null,
+			"messages": {
+				"required": "This field is required",
+				"minLength": "Minimum {min} characters required",
+				"maxLength": "Maximum {max} characters allowed"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "contains", "label": "Contains" },
+				{ "value": "not_contains", "label": "Not Contains" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"checkbox": {
+		"id": "",
+		"name": "",
+		"type": "checkbox",
+		"label": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"layout": "vertical",
+		"layoutOptions": [
+			{ "value": "vertical", "label": "Vertical" },
+			{ "value": "horizontal", "label": "Horizontal" },
+			{ "value": "grid", "label": "Grid" }
+		],
+		"columns": 1,
+		"columnOptions": [
+			{ "value": 1, "label": "1 Column" },
+			{ "value": 2, "label": "2 Columns" },
+			{ "value": 3, "label": "3 Columns" },
+			{ "value": 4, "label": "4 Columns" }
+		],
+		"options": [
+			{
+				"value": "",
+				"label": "",
+				"checked": false,
+				"disabled": false
+			}
+		],
+		"minSelected": null,
+		"maxSelected": null,
+		"selectAll": false,
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"minSelected": null,
+			"maxSelected": null,
+			"messages": {
+				"required": "Please select at least one option",
+				"minSelected": "Please select at least {min} options",
+				"maxSelected": "You can select up to {max} options"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "contains", "label": "Contains" },
+				{ "value": "not_contains", "label": "Not Contains" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"radio": {
+		"id": "",
+		"name": "",
+		"type": "radio",
+		"label": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"defaultValue": null,
+		"layout": "vertical",
+		"layoutOptions": [
+			{ "value": "vertical", "label": "Vertical" },
+			{ "value": "horizontal", "label": "Horizontal" },
+			{ "value": "grid", "label": "Grid" }
+		],
+		"columns": 1,
+		"columnOptions": [
+			{ "value": 1, "label": "1 Column" },
+			{ "value": 2, "label": "2 Columns" },
+			{ "value": 3, "label": "3 Columns" },
+			{ "value": 4, "label": "4 Columns" }
+		],
+		"options": [
+			{
+				"value": "",
+				"label": "",
+				"disabled": false
+			}
+		],
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"messages": {
+				"required": "Please select an option"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"image": {
+		"id": "",
+		"name": "",
+		"type": "image",
+		"label": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"multiple": false,
+		"maxFiles": 1,
+		"maxFilesOptions": [
+			{ "value": 1, "label": "1 file" },
+			{ "value": 3, "label": "3 files" },
+			{ "value": 5, "label": "5 files" },
+			{ "value": 10, "label": "10 files" },
+			{ "value": 20, "label": "20 files" }
+		],
+		"maxSizeMB": 5,
+		"maxSizeOptions": [
+			{ "value": 1, "label": "1 MB" },
+			{ "value": 2, "label": "2 MB" },
+			{ "value": 5, "label": "5 MB" },
+			{ "value": 10, "label": "10 MB" },
+			{ "value": 20, "label": "20 MB" },
+			{ "value": 50, "label": "50 MB" }
+		],
+		"minSizeMB": null,
+		"accept": ["image/jpeg", "image/png", "image/gif", "image/webp"],
+		"acceptOptions": [
+			{ "value": "image/jpeg", "label": "JPEG" },
+			{ "value": "image/png", "label": "PNG" },
+			{ "value": "image/gif", "label": "GIF" },
+			{ "value": "image/webp", "label": "WebP" },
+			{ "value": "image/svg+xml", "label": "SVG" },
+			{ "value": "image/bmp", "label": "BMP" }
+		],
+		"allowedExtensions": [".jpg", ".jpeg", ".png", ".gif", ".webp"],
+		"minWidth": null,
+		"maxWidth": null,
+		"minHeight": null,
+		"maxHeight": null,
+		"aspectRatio": null,
+		"aspectRatioOptions": [
+			{ "value": null, "label": "Any" },
+			{ "value": "1:1", "label": "Square (1:1)" },
+			{ "value": "4:3", "label": "Standard (4:3)" },
+			{ "value": "16:9", "label": "Widescreen (16:9)" },
+			{ "value": "3:2", "label": "Classic (3:2)" },
+			{ "value": "9:16", "label": "Portrait (9:16)" }
+		],
+		"showPreview": true,
+		"allowCrop": false,
+		"cropAspectRatio": null,
+		"uploadOnSelect": false,
+		"dragAndDrop": true,
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"maxSizeMB": 5,
+			"minSizeMB": null,
+			"maxFiles": 1,
+			"minWidth": null,
+			"maxWidth": null,
+			"minHeight": null,
+			"maxHeight": null,
+			"aspectRatio": null,
+			"messages": {
+				"required": "Please upload an image",
+				"maxSize": "Image size must not exceed {max}MB",
+				"minSize": "Image size must be at least {min}MB",
+				"maxFiles": "You can upload up to {max} image(s)",
+				"dimensions": "Image dimensions must be {width}x{height}",
+				"aspectRatio": "Image must have aspect ratio of {ratio}",
+				"invalidType": "Invalid file type. Allowed types: JPG, PNG, GIF, WebP"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"audio": {
+		"id": "",
+		"name": "",
+		"type": "audio",
+		"label": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"multiple": false,
+		"maxFiles": 1,
+		"maxFilesOptions": [
+			{ "value": 1, "label": "1 file" },
+			{ "value": 3, "label": "3 files" },
+			{ "value": 5, "label": "5 files" },
+			{ "value": 10, "label": "10 files" }
+		],
+		"maxSizeMB": 10,
+		"maxSizeOptions": [
+			{ "value": 5, "label": "5 MB" },
+			{ "value": 10, "label": "10 MB" },
+			{ "value": 20, "label": "20 MB" },
+			{ "value": 50, "label": "50 MB" },
+			{ "value": 100, "label": "100 MB" }
+		],
+		"minSizeMB": null,
+		"maxDurationSeconds": null,
+		"maxDurationOptions": [
+			{ "value": null, "label": "No limit" },
+			{ "value": 30, "label": "30 seconds" },
+			{ "value": 60, "label": "1 minute" },
+			{ "value": 180, "label": "3 minutes" },
+			{ "value": 300, "label": "5 minutes" },
+			{ "value": 600, "label": "10 minutes" },
+			{ "value": 1800, "label": "30 minutes" },
+			{ "value": 3600, "label": "1 hour" }
+		],
+		"accept": ["audio/mpeg", "audio/wav", "audio/ogg", "audio/mp4"],
+		"acceptOptions": [
+			{ "value": "audio/mpeg", "label": "MP3" },
+			{ "value": "audio/wav", "label": "WAV" },
+			{ "value": "audio/ogg", "label": "OGG" },
+			{ "value": "audio/mp4", "label": "M4A" },
+			{ "value": "audio/webm", "label": "WebM" },
+			{ "value": "audio/aac", "label": "AAC" }
+		],
+		"allowedExtensions": [".mp3", ".wav", ".ogg", ".m4a"],
+		"showPreview": true,
+		"allowRecord": false,
+		"uploadOnSelect": false,
+		"dragAndDrop": true,
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"maxSizeMB": 10,
+			"minSizeMB": null,
+			"maxFiles": 1,
+			"maxDurationSeconds": null,
+			"messages": {
+				"required": "Please upload an audio file",
+				"maxSize": "Audio file must not exceed {max}MB",
+				"minSize": "Audio file must be at least {min}MB",
+				"maxFiles": "You can upload up to {max} audio file(s)",
+				"maxDuration": "Audio duration must not exceed {max} seconds",
+				"invalidType": "Invalid file type. Allowed types: MP3, WAV, OGG, M4A"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"video": {
+		"id": "",
+		"name": "",
+		"type": "video",
+		"label": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"multiple": false,
+		"maxFiles": 1,
+		"maxFilesOptions": [
+			{ "value": 1, "label": "1 file" },
+			{ "value": 3, "label": "3 files" },
+			{ "value": 5, "label": "5 files" },
+			{ "value": 10, "label": "10 files" }
+		],
+		"maxSizeMB": 50,
+		"maxSizeOptions": [
+			{ "value": 10, "label": "10 MB" },
+			{ "value": 25, "label": "25 MB" },
+			{ "value": 50, "label": "50 MB" },
+			{ "value": 100, "label": "100 MB" },
+			{ "value": 250, "label": "250 MB" },
+			{ "value": 500, "label": "500 MB" },
+			{ "value": 1000, "label": "1 GB" }
+		],
+		"minSizeMB": null,
+		"maxDurationSeconds": null,
+		"maxDurationOptions": [
+			{ "value": null, "label": "No limit" },
+			{ "value": 30, "label": "30 seconds" },
+			{ "value": 60, "label": "1 minute" },
+			{ "value": 180, "label": "3 minutes" },
+			{ "value": 300, "label": "5 minutes" },
+			{ "value": 600, "label": "10 minutes" },
+			{ "value": 1800, "label": "30 minutes" },
+			{ "value": 3600, "label": "1 hour" }
+		],
+		"accept": ["video/mp4", "video/webm", "video/ogg"],
+		"acceptOptions": [
+			{ "value": "video/mp4", "label": "MP4" },
+			{ "value": "video/webm", "label": "WebM" },
+			{ "value": "video/ogg", "label": "OGG" },
+			{ "value": "video/quicktime", "label": "MOV" },
+			{ "value": "video/x-msvideo", "label": "AVI" }
+		],
+		"allowedExtensions": [".mp4", ".webm", ".ogg"],
+		"showPreview": true,
+		"allowRecord": false,
+		"uploadOnSelect": false,
+		"dragAndDrop": true,
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"maxSizeMB": 50,
+			"minSizeMB": null,
+			"maxFiles": 1,
+			"maxDurationSeconds": null,
+			"messages": {
+				"required": "Please upload a video file",
+				"maxSize": "Video file must not exceed {max}MB",
+				"minSize": "Video file must be at least {min}MB",
+				"maxFiles": "You can upload up to {max} video file(s)",
+				"maxDuration": "Video duration must not exceed {max} seconds",
+				"invalidType": "Invalid file type. Allowed types: MP4, WebM, OGG"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"file": {
+		"id": "",
+		"name": "",
+		"type": "file",
+		"label": "",
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"multiple": false,
+		"maxFiles": 1,
+		"maxFilesOptions": [
+			{ "value": 1, "label": "1 file" },
+			{ "value": 3, "label": "3 files" },
+			{ "value": 5, "label": "5 files" },
+			{ "value": 10, "label": "10 files" },
+			{ "value": 20, "label": "20 files" }
+		],
+		"maxSizeMB": 10,
+		"maxSizeOptions": [
+			{ "value": 1, "label": "1 MB" },
+			{ "value": 5, "label": "5 MB" },
+			{ "value": 10, "label": "10 MB" },
+			{ "value": 25, "label": "25 MB" },
+			{ "value": 50, "label": "50 MB" },
+			{ "value": 100, "label": "100 MB" },
+			{ "value": 250, "label": "250 MB" }
+		],
+		"minSizeMB": null,
+		"accept": [],
+		"acceptOptions": [
+			{ "value": "application/pdf", "label": "PDF" },
+			{ "value": "application/msword", "label": "Word (DOC)" },
+			{ "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "label": "Word (DOCX)" },
+			{ "value": "application/vnd.ms-excel", "label": "Excel (XLS)" },
+			{ "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "label": "Excel (XLSX)" },
+			{ "value": "application/vnd.ms-powerpoint", "label": "PowerPoint (PPT)" },
+			{
+				"value": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+				"label": "PowerPoint (PPTX)"
+			},
+			{ "value": "text/plain", "label": "Text File" },
+			{ "value": "text/csv", "label": "CSV" },
+			{ "value": "application/zip", "label": "ZIP" },
+			{ "value": "application/x-rar-compressed", "label": "RAR" }
+		],
+		"allowedExtensions": [],
+		"showPreview": true,
+		"uploadOnSelect": false,
+		"dragAndDrop": true,
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"maxSizeMB": 10,
+			"minSizeMB": null,
+			"maxFiles": 1,
+			"allowedTypes": [],
+			"messages": {
+				"required": "Please upload a file",
+				"maxSize": "File size must not exceed {max}MB",
+				"minSize": "File size must be at least {min}MB",
+				"maxFiles": "You can upload up to {max} file(s)",
+				"invalidType": "Invalid file type. Allowed types: {types}"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"select": {
+		"id": "",
+		"name": "",
+		"type": "select",
+		"label": "",
+		"placeholder": "Select an option",
+		"defaultValue": null,
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"multiple": false,
+		"searchable": false,
+		"clearable": true,
+		"options": [
+			{
+				"value": "",
+				"label": "",
+				"disabled": false
+			}
+		],
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"icon": null,
+		"iconPosition": "left",
+		"iconPositionOptions": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }],
+		"validation": {
+			"required": false,
+			"messages": {
+				"required": "Please select an option"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "contains", "label": "Contains" },
+				{ "value": "not_contains", "label": "Not Contains" },
+				{ "value": "is_empty", "label": "Is Empty" },
+				{ "value": "is_not_empty", "label": "Is Not Empty" }
+			],
+			"value": null
+		}
+	},
+	"range": {
+		"id": "",
+		"name": "",
+		"type": "range",
+		"label": "",
+		"defaultValue": 50,
+		"helperText": "",
+		"required": false,
+		"disabled": false,
+		"min": 0,
+		"max": 100,
+		"step": 1,
+		"stepOptions": [
+			{ "value": 0.1, "label": "0.1" },
+			{ "value": 0.5, "label": "0.5" },
+			{ "value": 1, "label": "1" },
+			{ "value": 5, "label": "5" },
+			{ "value": 10, "label": "10" },
+			{ "value": 25, "label": "25" }
+		],
+		"showValue": true,
+		"showMinMax": true,
+		"prefix": null,
+		"prefixOptions": [
+			{ "value": null, "label": "None" },
+			{ "value": "$", "label": "Dollar ($)" },
+			{ "value": "€", "label": "Euro (€)" },
+			{ "value": "£", "label": "Pound (£)" },
+			{ "value": "¥", "label": "Yen (¥)" },
+			{ "value": "₹", "label": "Rupee (₹)" }
+		],
+		"suffix": null,
+		"suffixOptions": [
+			{ "value": null, "label": "None" },
+			{ "value": "%", "label": "Percent (%)" },
+			{ "value": "kg", "label": "Kilogram (kg)" },
+			{ "value": "lb", "label": "Pound (lb)" },
+			{ "value": "km", "label": "Kilometer (km)" },
+			{ "value": "mi", "label": "Mile (mi)" },
+			{ "value": "°C", "label": "Celsius (°C)" },
+			{ "value": "°F", "label": "Fahrenheit (°F)" }
+		],
+		"marks": [],
+		"width": "full",
+		"widthOptions": [
+			{ "value": "full", "label": "Full Width (100%)" },
+			{ "value": "three-quarter", "label": "Three Quarter (75%)" },
+			{ "value": "half", "label": "Half Width (50%)" },
+			{ "value": "third", "label": "One Third (33%)" },
+			{ "value": "quarter", "label": "Quarter (25%)" }
+		],
+		"className": "",
+		"validation": {
+			"required": false,
+			"min": 0,
+			"max": 100,
+			"messages": {
+				"required": "This field is required",
+				"min": "Value must be at least {min}",
+				"max": "Value must not exceed {max}"
+			}
+		},
+		"conditional": {
+			"enabled": false,
+			"field": null,
+			"operator": "equals",
+			"operators": [
+				{ "value": "equals", "label": "Equals" },
+				{ "value": "not_equals", "label": "Not Equals" },
+				{ "value": "greater_than", "label": "Greater Than" },
+				{ "value": "less_than", "label": "Less Than" },
+				{ "value": "greater_than_or_equal", "label": "Greater Than or Equal" },
+				{ "value": "less_than_or_equal", "label": "Less Than or Equal" }
+			],
+			"value": null
+		}
+	}
+}

@@ -127,24 +127,24 @@ export function PageEditor({ b }: { b: Builder }) {
 
   const selId = P.sel;
   const dev = (k: "desktop" | "mobile", label: string, Icon: LucideIcon) => (
-    <button key={k} type="button" title={label} aria-label={label} aria-pressed={P.device === k} onClick={() => set({ device: k })} className={cn("flex h-7 w-[34px] cursor-pointer items-center justify-center rounded-[7px] border-0 transition-all duration-150", P.device === k ? "bg-foreground text-background" : "bg-transparent text-muted-foreground")}><Icon className="size-4" /></button>
+    <button key={k} type="button" title={label} aria-label={label} aria-pressed={P.device === k} onClick={() => set({ device: k })} className={cn("flex h-7 w-8.5 cursor-pointer items-center justify-center rounded-[7px] border-0 transition-all duration-150", P.device === k ? "bg-foreground text-background" : "bg-transparent text-muted-foreground")}><Icon className="size-4" /></button>
   );
   const seg = (items: { v: string; label: string; icon: LucideIcon }[], val: string, pick: (v: string) => void, off?: string[]) => (
-    <div className="flex rounded-[9px] bg-secondary p-[3px]">
+    <div className="flex rounded-[9px] bg-secondary p-0.75">
       {items.map(({ v, label, icon: Icon }) => (
-        <button key={v} type="button" disabled={off?.includes(v)} title={off?.includes(v) ? "Needs file storage, not available yet" : undefined} onClick={() => pick(v)} className={cn("flex h-[30px] flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-[7px] border-0 text-[12.5px] font-bold transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-45", v === val ? "bg-card text-foreground shadow-[0_1px_2px_rgb(27_23_36/0.1)]" : "bg-transparent text-muted-foreground")}><Icon className="size-4" />{label}</button>
+        <button key={v} type="button" disabled={off?.includes(v)} title={off?.includes(v) ? "Needs file storage, not available yet" : undefined} onClick={() => pick(v)} className={cn("flex h-7.5 flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-[7px] border-0 text-[12.5px] font-bold transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-45", v === val ? "bg-card text-foreground shadow-[0_1px_2px_rgb(27_23_36/0.1)]" : "bg-transparent text-muted-foreground")}><Icon className="size-4" />{label}</button>
       ))}
     </div>
   );
   const cardSeg = seg([{ v: "solid", label: "Solid", icon: SquareIcon }, { v: "glass", label: "Frosted", icon: DropletIcon }], P.card, (v) => set({ card: v as "solid" | "glass" }));
   const inp = (label: string, value: string, on: (v: string) => void, type = "text") => (
-    <label className="flex flex-col gap-1.5 text-[13px] font-bold">{label}<input type={type} value={value} onChange={(e) => on(e.target.value)} className="h-[38px] rounded-[9px] border border-input px-2.5 text-sm font-medium outline-none focus:border-primary focus:ring-3 focus:ring-ring/20" /></label>
+    <label className="flex flex-col gap-1.5 text-[13px] font-bold">{label}<input type={type} value={value} onChange={(e) => on(e.target.value)} className="h-9.5 rounded-[9px] border border-input px-2.5 text-sm font-medium outline-none focus:border-primary focus:ring-3 focus:ring-ring/20" /></label>
   );
   const area = (label: string, value: string, on: (v: string) => void, rows: number) => (
     <label className="flex flex-col gap-1.5 text-[13px] font-bold">{label}<textarea value={value} rows={rows} onChange={(e) => on(e.target.value)} className="resize-y rounded-[9px] border border-input px-2.5 py-2 text-sm leading-normal font-medium outline-none focus:border-primary focus:ring-3 focus:ring-ring/20" /></label>
   );
   const switchRow = (label: string, on: boolean, flip: (v: boolean) => void) => (
-    <div className="flex items-center gap-2.5 pt-0.5 text-[13.5px] font-bold"><Switch checked={on} onCheckedChange={flip} aria-label={label} className="h-5 w-[34px]" />{label}</div>
+    <div className="flex items-center gap-2.5 pt-0.5 text-[13.5px] font-bold"><Switch checked={on} onCheckedChange={flip} aria-label={label} className="h-5 w-8.5" />{label}</div>
   );
 
   return (
@@ -157,8 +157,8 @@ export function PageEditor({ b }: { b: Builder }) {
             const sel = P.sel === id;
             const TI = id === "form" ? LockIcon : P.on[id] ? EyeIcon : EyeOffIcon;
             return (
-              <div key={id} role="button" tabIndex={0} onClick={() => select(id)} onKeyDown={(e) => { if (e.key === "Enter") select(id); }} className={cn("flex h-[38px] cursor-pointer items-center gap-2.5 rounded-[9px] pr-1.5 pl-2.5 transition-colors duration-100 hover:bg-background", sel ? "bg-tint text-primary" : "text-foreground", !P.on[id] && "opacity-45")}>
-                <Icon className="size-[15px] w-4" />
+              <div key={id} role="button" tabIndex={0} onClick={() => select(id)} onKeyDown={(e) => { if (e.key === "Enter") select(id); }} className={cn("flex h-9.5 cursor-pointer items-center gap-2.5 rounded-[9px] pr-1.5 pl-2.5 transition-colors duration-100 hover:bg-background", sel ? "bg-tint text-primary" : "text-foreground", !P.on[id] && "opacity-45")}>
+                <Icon className="size-3.75 w-4" />
                 <span className="min-w-0 flex-1 truncate text-[13.5px] font-bold">{name}</span>
                 <button type="button" title={id === "form" ? "Always shown" : P.on[id] ? "Hide section" : "Show section"} aria-label={id === "form" ? "Always shown" : P.on[id] ? `Hide ${name}` : `Show ${name}`} onClick={(e) => { e.stopPropagation(); toggleSec(id); }} className={cn("flex size-7 flex-none items-center justify-center rounded-[7px] border-0 bg-transparent text-ink-3 hover:bg-neutral-soft hover:text-foreground", id === "form" ? "cursor-default" : "cursor-pointer")}><TI className="size-4" /></button>
               </div>
@@ -168,22 +168,22 @@ export function PageEditor({ b }: { b: Builder }) {
       </aside>
 
       <main ref={setScrollEl} onClick={() => set({ sel: null })} className="relative min-h-0 overflow-auto px-6 pt-4 pb-20" style={{ background: "radial-gradient(#dcd5ce 1px, transparent 1.2px) 0 0 / 18px 18px, #efebe7" }}>
-        <div className="mx-auto mb-3.5 flex max-w-[1120px] flex-wrap items-center gap-2.5" onClick={(e) => e.stopPropagation()}>
-          <div className="flex rounded-[10px] border border-border bg-card p-[3px]">{dev("desktop", "Desktop", MonitorIcon)}{dev("mobile", "Phone", SmartphoneIcon)}</div>
-          <div className="flex h-[34px] min-w-0 items-center gap-2 rounded-[10px] border border-border bg-card px-3 text-[13px]"><GlobeIcon className="size-4 text-success" /><span className="min-w-0 truncate font-mono text-xs">{url}</span></div>
+        <div className="mx-auto mb-3.5 flex max-w-280 flex-wrap items-center gap-2.5" onClick={(e) => e.stopPropagation()}>
+          <div className="flex rounded-[10px] border border-border bg-card p-0.75">{dev("desktop", "Desktop", MonitorIcon)}{dev("mobile", "Phone", SmartphoneIcon)}</div>
+          <div className="flex h-8.5 min-w-0 items-center gap-2 rounded-[10px] border border-border bg-card px-3 text-[13px]"><GlobeIcon className="size-4 text-success" /><span className="min-w-0 truncate font-mono text-xs">{url}</span></div>
           <span className="ml-auto hidden items-center gap-1.5 text-[12.5px] text-muted-foreground min-[1280px]:flex"><MousePointerClickIcon className="size-4" />{P.preview ? "Previewing as a respondent" : "Click a section to edit"}</span>
-          <button type="button" onClick={() => set({ preview: !P.preview, sel: null, hover: null })} className={cn("flex h-[34px] cursor-pointer items-center gap-1.5 rounded-[10px] border px-3 text-[13px] font-bold", P.preview ? "border-foreground bg-foreground text-background" : "border-input bg-card text-foreground")}>{P.preview ? <PencilIcon className="size-4" /> : <EyeIcon className="size-4" />}{P.preview ? "Edit" : "Preview"}</button>
+          <button type="button" onClick={() => set({ preview: !P.preview, sel: null, hover: null })} className={cn("flex h-8.5 cursor-pointer items-center gap-1.5 rounded-[10px] border px-3 text-[13px] font-bold", P.preview ? "border-foreground bg-foreground text-background" : "border-input bg-card text-foreground")}>{P.preview ? <PencilIcon className="size-4" /> : <EyeIcon className="size-4" />}{P.preview ? "Edit" : "Preview"}</button>
         </div>
 
         <div
-          className="mx-auto w-full transition-[max-width] duration-[250ms]"
+          className="mx-auto w-full transition-[max-width] duration-250"
           style={{ maxWidth: mob ? 390 : 1120, height: mob ? "min(760px, calc(100vh - 150px))" : "auto", overflowY: mob ? "auto" : "hidden", overscrollBehavior: "contain", scrollbarWidth: "thin", borderRadius: mob ? 40 : 14, border: mob ? "10px solid #1b1724" : "1px solid #e6e1dc", background: "#f7f5f2", boxShadow: "0 30px 60px -40px rgba(27,23,36,.45)" }}
         >
           {!mob && (
             <div className="relative z-20 flex h-[38px] items-center gap-3 rounded-t-[14px] border-b border-neutral-soft bg-card px-3.5">
               <div className="flex gap-1.5">{[0, 1, 2].map((i) => <span key={i} className="size-2.5 rounded-full bg-border" />)}</div>
-              <span className="mx-auto flex h-6 max-w-[360px] min-w-0 flex-1 items-center justify-center gap-1.5 overflow-hidden rounded-[7px] bg-neutral-soft/60 font-mono text-[11.5px] whitespace-nowrap text-ink-2"><LockIcon className="size-[11px]" />{url}</span>
-              <span className="w-[42px]" />
+              <span className="mx-auto flex h-6 max-w-90 min-w-0 flex-1 items-center justify-center gap-1.5 overflow-hidden rounded-[7px] bg-neutral-soft/60 font-mono text-[11.5px] whitespace-nowrap text-ink-2"><LockIcon className="size-2.75" />{url}</span>
+              <span className="w-10.5" />
             </div>
           )}
           <div className="relative grid" style={{ gridTemplateColumns: pg.cols, gridTemplateAreas: pg.areas, gridTemplateRows: pg.rows, background: "#f7f5f2", minHeight: pg.minH, fontFamily: "var(--font-manrope)" }}>
@@ -205,14 +205,14 @@ export function PageEditor({ b }: { b: Builder }) {
               {P.on.hero && (
                 <div {...sp("hero", 8)} className="flex flex-col gap-3.5" style={{ ...sp("hero", 8).style, maxWidth: pg.heroMax, margin: pg.heroM, textAlign: pg.align as CSSProperties["textAlign"], alignItems: pg.alignItems }}>
                   <span className="rounded-full px-2.5 py-1 text-xs font-extrabold tracking-[0.06em]" style={{ background: ink.chip }}>FORM · {year}</span>
-                  <h1 className="m-0 leading-[1.08] tracking-[-0.025em] text-balance" style={{ ...HEAD, fontSize: pg.h1 }}>{P.org.headline}</h1>
-                  {P.org.intro && <p className="m-0 max-w-[560px] leading-[1.6] text-pretty" style={{ fontSize: pg.lead, color: ink.headMut }}>{P.org.intro}</p>}
+                  <h1 className="m-0 leading-[1.08] tracking-tight text-balance" style={{ ...HEAD, fontSize: pg.h1 }}>{P.org.headline}</h1>
+                  {P.org.intro && <p className="m-0 max-w-140 leading-[1.6] text-pretty" style={{ fontSize: pg.lead, color: ink.headMut }}>{P.org.intro}</p>}
                 </div>
               )}
             </div>
 
             <div style={{ gridArea: "form", position: "relative", zIndex: 2, padding: pg.formPad }}>
-              <div {...sp("form", 6, 20)} className="flex flex-col gap-[22px]" style={{ ...sp("form", 6, 20).style, width: "100%", maxWidth: pg.formMax, margin: pg.formM, background: fc.bg, backdropFilter: fc.blur, WebkitBackdropFilter: fc.blur, border: `1px solid ${fc.bd}`, padding: pg.cardPad, boxShadow: fc.sh, color: fc.ink, transition: "background .2s, border-color .2s" }}>
+              <div {...sp("form", 6, 20)} className="flex flex-col gap-5.5" style={{ ...sp("form", 6, 20).style, width: "100%", maxWidth: pg.formMax, margin: pg.formM, background: fc.bg, backdropFilter: fc.blur, WebkitBackdropFilter: fc.blur, border: `1px solid ${fc.bd}`, padding: pg.cardPad, boxShadow: fc.sh, color: fc.ink, transition: "background .2s, border-color .2s" }}>
                 <div className="flex flex-col gap-1.5">
                   <div className="flex items-center gap-2 text-[12.5px] font-bold" style={{ color: fc.mut }}><ClockIcon className="size-4" />About {mins} {mins === 1 ? "minute" : "minutes"}<span className="size-[3px] rounded-full" style={{ background: fc.mut }} />{S.fields.length} {S.fields.length === 1 ? "question" : "questions"}</div>
                   <h2 className="m-0 text-[22px] tracking-[-0.015em]" style={HEAD}>{S.title || "Untitled form"}</h2>

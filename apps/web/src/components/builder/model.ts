@@ -186,3 +186,6 @@ export function theme(d: Design) {
   };
 }
 export type Theme = ReturnType<typeof theme>;
+
+export const TAB_IDS = ["build", "logic", "design"] as const;
+export type Tab = (typeof TAB_IDS)[number];

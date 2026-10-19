@@ -9,9 +9,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { authClient } from "@/lib/auth-client";
 import { BuilderShell } from "./builder-shell";
 import { type LoadedForm, loadForm } from "./persist";
+import type { Tab } from "./model";
 
 // Auth gate + fetch. The builder itself only mounts once the form is in hand, so its state can initialise from it.
-export function BuilderLoader({ id }: { id: string }) {
+export function BuilderLoader({ id, tab }: { id: string; tab: Tab }) {
   const router = useRouter();
   const { data: session, isPending } = authClient.useSession();
   const [form, setForm] = useState<LoadedForm | null>(null);
@@ -57,5 +58,5 @@ export function BuilderLoader({ id }: { id: string }) {
       </div>
     );
 
-  return <BuilderShell form={form} />;
+  return <BuilderShell form={form} tab={tab} />;
 }

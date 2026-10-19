@@ -13,8 +13,8 @@ export function AddPanel({ b }: { b: Builder }) {
   return (
     <div className="flex flex-col gap-4 p-3.5">
       <div className="relative">
-        <SearchIcon className="absolute top-1/2 left-[11px] size-4 -translate-y-1/2 text-ink-3" />
-        <input value={S.pq} onChange={(e) => b.set({ pq: e.target.value })} placeholder="Search fields" aria-label="Search fields" className={cn(field, "w-full pr-2.5 pl-[34px]")} />
+        <SearchIcon className="absolute top-1/2 left-2.75 size-4 -translate-y-1/2 text-ink-3" />
+        <input value={S.pq} onChange={(e) => b.set({ pq: e.target.value })} placeholder="Search fields" aria-label="Search fields" className={cn(field, "w-full pr-2.5 pl-8.5")} />
       </div>
       {groups.map((g) => (
         <div key={g.name} className="flex flex-col gap-2">
@@ -23,8 +23,8 @@ export function AddPanel({ b }: { b: Builder }) {
             {g.items.map((k) => {
               const Icon = T[k].i;
               return (
-                <div key={k} draggable onDragStart={(e) => a.startTypeDrag(k, e)} onDragEnd={a.endDrag} onClick={() => a.add(k)} title="Click to add, or drag into the form" role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); a.add(k); } }} className="flex h-10 cursor-grab items-center gap-[9px] rounded-[10px] border border-neutral-soft bg-card px-2.5 text-[13px] font-bold transition-all duration-150 outline-none select-none hover:-translate-y-px hover:border-primary-300 hover:bg-tint-soft hover:shadow-[0_4px_10px_-6px_rgb(75_43_209/0.35)] focus-visible:ring-3 focus-visible:ring-ring/20 active:scale-[0.97]">
-                  <span className="flex size-6 flex-none items-center justify-center rounded-[7px] bg-secondary text-sidebar-foreground"><Icon className="size-[13px]" /></span>
+                <div key={k} draggable onDragStart={(e) => a.startTypeDrag(k, e)} onDragEnd={a.endDrag} onClick={() => a.add(k)} title="Click to add, or drag into the form" role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); a.add(k); } }} className="flex h-10 cursor-grab items-center gap-2.25 rounded-[10px] border border-neutral-soft bg-card px-2.5 text-[13px] font-bold transition-all duration-150 outline-none select-none hover:-translate-y-px hover:border-primary-300 hover:bg-tint-soft hover:shadow-[0_4px_10px_-6px_rgb(75_43_209/0.35)] focus-visible:ring-3 focus-visible:ring-ring/20 active:scale-[0.97]">
+                  <span className="flex size-6 flex-none items-center justify-center rounded-[7px] bg-secondary text-sidebar-foreground"><Icon className="size-3.25" /></span>
                   <span className="truncate">{T[k].n}</span>
                 </div>
               );

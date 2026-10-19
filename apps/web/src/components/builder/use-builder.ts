@@ -4,11 +4,10 @@ import { type DragEvent, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { setPublished } from "@/lib/forms";
 import { defCond, empty, evalLogic, opsFor, valKind } from "./logic";
-import { type Answers, type Answer, DEFAULT_DESIGN, type Design, type Field, type FieldType, mk, type Rule, T, theme, TYPE_KEYS, typeDef } from "./model";
+import { type Answers, type Answer, DEFAULT_DESIGN, type Design, type Field, type FieldType, mk, type Rule, T, type Tab, theme, TYPE_KEYS, typeDef } from "./model";
 import { defaultPage, type PageState } from "./page-model";
 import { fieldsFromApi, type LoadedForm, saveForm } from "./persist";
 
-export type Tab = "build" | "logic" | "design";
 export type Device = "desktop" | "mobile";
 export type SaveState = "saved" | "saving" | "error";
 
@@ -53,14 +52,14 @@ type State = {
 
 const RESET_FILL = { answers: {}, errors: {}, submitted: false, cur: 0 } as const;
 
-export function useBuilder(form: LoadedForm) {
+export function useBuilder(form: LoadedForm, initialTab: Tab) {
   const [S, setS] = useState<State>(() => ({
     title: form.title,
     desc: form.description ?? "",
     fields: fieldsFromApi(form.fields),
     rules: [],
     design: DEFAULT_DESIGN,
-    sel: null, hover: null, panel: "add", mode: "edit", device: "desktop", tab: "build", lgFilter: null, justRule: null,
+    sel: null, hover: null, panel: "add", mode: "edit", device: "desktop", tab: initialTab, lgFilter: null, justRule: null,
     past: [], future: [], ...RESET_FILL, focus: null, rhover: null,
     pq: "", qi: false, qq: "", qx: 0,
     armed: null, dropAt: null, dragging: null, dragLabel: null, justAdded: null,
